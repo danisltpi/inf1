@@ -56,10 +56,10 @@ public class LoesungKegel extends JFrame {
 		// schraffur
 		g.setColor(Color.LIGHT_GRAY);
 		
-		int laenge = x75 - x25; 
+		int laenge = this.getWidth() / 2; 
 		// laufpunkt x
-		for (int i=1; i<=40; i++) {
-			int x = x25 + i * (laenge / 40);
+		for (int i=1; i<40; i++) {
+			int x = x25 + i * laenge / 40;
 			System.out.println(i);
 			System.out.println(x);
 			g.drawLine(x, y25, this.getWidth() / 2, this.getHeight() / 2); // mittelpunkt: (getwidth /2, getheight/2)
