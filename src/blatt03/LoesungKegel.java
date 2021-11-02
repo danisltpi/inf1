@@ -41,5 +41,30 @@ public class LoesungKegel extends JFrame {
 	 */
    public void meinKegel(Graphics g){
 	   // TODO
+		int x25 = this.getWidth() / 4;		// x-Koordinate bei 25% der Fensterbreite (von links)
+		int x75 = this.getWidth() * 3 / 4;  // x-Koordinate bei 75% der Fensterbreite (von links)
+		int y25 = this.getHeight() / 4;		// y-Koordinate bei 25% der Fensterbreite (von oben)
+		int y75 = this.getHeight() * 3 / 4; // y-Koordinate bei 75% der Fensterbreite (von oben)
+		
+		
+		// kegel	
+		g.drawLine(x25, y25, x75, y25);
+		g.drawLine(x75, y25, x25, y75);
+		g.drawLine(x25, y25, x75, y75);
+		g.drawLine(x25, y75, x75, y75);
+			
+		// schraffur
+		g.setColor(Color.LIGHT_GRAY);
+		
+		int laenge = x75 - x25; 
+		// laufpunkt x
+		for (int i=1; i<=40; i++) {
+			int x = x25 + i * (laenge / 40);
+			System.out.println(i);
+			System.out.println(x);
+			g.drawLine(x, y25, this.getWidth() / 2, this.getHeight() / 2); // mittelpunkt: (getwidth /2, getheight/2)
+			g.drawLine(x, y75, this.getWidth() / 2, this.getHeight() / 2);
+		}
+		System.out.println(x75);
    } 
 }

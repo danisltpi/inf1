@@ -68,10 +68,10 @@ public class LoesungXYRaster extends JFrame {
 		   int rasterHoehe = this.getHeight() / 2; 
 		   int y = (this.getHeight() / 4) + (rasterHoehe * i) / 10;
 		   if (i % 2 == 0) {
-			   g.setColor(Color.black);
+			   g.setColor(Color.BLACK);
 		   }
 		   else {
-			   g.setColor(Color.gray);
+			   g.setColor(Color.GRAY);
 		   }
 		   g.drawLine(x1, y, x2, y);
 		   
