@@ -53,12 +53,17 @@ public class LoesungDiagonalen extends JFrame {
 		int y75 = this.getHeight() * 3 / 4; // y-Koordinate bei 75% der Fensterbreite (von oben)
 
 		// TODO: Komplettes Rechteck zeichnen
-		g.drawLine(x75, y25, x25, y25);
-		g.drawLine(x25, y25, x25, y75);
-
+		g.drawLine(x75, y25, x25, y25); // oben
+		g.drawLine(x25, y25, x25, y75); // links
+		g.drawLine(x25, y75, x75, y75); // unten
+		g.drawLine(x75, y75, x75, y25); // rechtes
+		
 		// Beispiel für Einsatz anderer Farbe
 		g.setColor(Color.RED); 
-		g.drawLine(x25, y75, x75, y75);
+		g.drawLine(x25, y25, x75, y75);
+		
+		g.setColor(Color.BLUE);
+		g.drawLine(x25, y75, x75, y25);
 
 		// TODO: rote Diagonale zeichnen
 
