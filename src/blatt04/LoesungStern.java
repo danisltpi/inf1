@@ -41,5 +41,37 @@ public class LoesungStern extends JFrame {
 	 */
    public void meinStern(Graphics g){
 	   // TODO
+	   // 24 blaue Strahlen, dazwischen jeweils pinke Strahlen (insg. 24 pinke)
+	   
+	   // radius
+	   int r = 150;
+	   float rPink = r / 2;
+	   int anzahlStrahlen = 24 * 2;
+	   
+	   for (int i = 0; i <= anzahlStrahlen; i++) {
+		  double phi = (i * (2 * Math.PI) / anzahlStrahlen); 		  
+		  int x;
+		  int y;
+
+		  // pinke strahlen
+		  if (i % 2 == 1) {
+			  g.setColor(Color.MAGENTA);
+			  System.out.println(rPink);
+			  x = (int) (rPink * Math.cos(phi)); 
+			  y = (int) (rPink * Math.sin(phi)); 
+		  }
+		  else {
+			  g.setColor(Color.BLUE);
+			  x = (int) (r * Math.cos(phi)); 
+			  y = (int) (r * Math.sin(phi)); 
+		  }
+
+		  
+		  // verschiebung in die mitte
+		  x += this.getWidth() / 2;
+		  y += this.getHeight() / 2; 
+		  
+		  g.drawLine(this.getWidth() / 2, this.getHeight() / 2, x, y);  
+	   }
    } 
 }

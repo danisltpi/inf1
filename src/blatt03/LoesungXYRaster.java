@@ -71,7 +71,7 @@ public class LoesungXYRaster extends JFrame {
 			   g.setColor(Color.BLACK);
 		   }
 		   else {
-			   g.setColor(Color.GRAY);
+			   g.setColor(Color.LIGHT_GRAY);
 		   }
 		   g.drawLine(x1, y, x2, y);
 		   
