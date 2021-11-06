@@ -34,7 +34,6 @@ public class LoesungStern extends JFrame {
     	
     	
     	this.meinStern(g); // Aufruf der selbst programmierten Methode
-    	this.zeichneEinenStern(g, 200, 200, 50);
     }
 	/** 
 	 * Hier bitte die Lösung, um den Stern zu zeichnen
