@@ -24,8 +24,9 @@ public class ArrayStatistik {
 		// finde median
 		// da die liste die länge 30 hat, muss der median der mittelwert der beiden mittlerer werte an position 31/2  = 15.5 also 15 und 16	
 		// (n+1)/2 : position des median elements 
+		int midIndex = (liste.length + 1) / 2;
 		System.out.println("Median: " + (liste[16] + liste[17])/2);
-		System.out.println("Alternativer Median: " + liste[16]);
+		System.out.println("Alternativer Median: " + liste[midIndex + 1]);
 	}
 }
 
