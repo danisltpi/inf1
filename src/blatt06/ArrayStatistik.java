@@ -27,6 +27,15 @@ public class ArrayStatistik {
 		int midIndex = (liste.length + 1) / 2;
 		System.out.println("Median: " + (liste[16] + liste[17])/2);
 		System.out.println("Alternativer Median: " + liste[midIndex + 1]);
+		
+		// statistik mit mehrdimensionale arrays
+		double statistik[][] = {{0, 350, 1500, 5000}, {74.4, 18.2, 6.1, 1.3}};
+		double erwartungswert = 0;
+
+		for (int i = 0; i<statistik[0].length; i++) {
+			erwartungswert += statistik[0][i] * (statistik[1][i] / 100);
+		}
+			System.out.println("Erwartungswert: " + erwartungswert);
 	}
 }
 
