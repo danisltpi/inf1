@@ -33,19 +33,28 @@ public class DreiChinesen {
 		 String lines[] = t.split("\\n");
 
 		 // finde die längste zeile
-		 int index = 0;
+		 int indexLaengste = 0;
 		 for (int i=0;i<lines.length;i++){
-			 if (lines[i].length() > lines[index].length()) {
-				index = i; 
+			 if (lines[i].length() > lines[indexLaengste].length()) {
+				indexLaengste = i; 
 				}
 			 }
 		 // eingerückt printen
 		 for (int i=0;i<lines.length;i++){	
-			 if (i == index) {
+			 if (i == indexLaengste) {
 				 System.out.println(lines[i]);
 				 }
+			 
 			 else {
-				System.out.println("   " + lines[i]); 
+				 String output = "";
+				 // spaces einfuegen so oft wie die differenz zwischen der aktuellen zeile und der laengsten
+				 int diff = lines[indexLaengste].length() - lines[i].length();
+				 
+				 for (int j=0; j<diff/2; j++) {
+					 output += " ";
+				 } 
+				 output += lines[i];
+				 System.out.println(output);
 				}
 			 }
 		 } 
@@ -56,7 +65,8 @@ public class DreiChinesen {
 	 }
 	 
 	 public static void main(String[] args) {
-		 //printCentered(changeVowels(text, "i"));	
+		 printCentered(changeVowels(text, "ä"));	
+		 /*
 		 Bauer bauer = new Bauer("Walter");
 		 Huhn h1 = new Huhn("Heidrun");
 		 Huhn h2 = new Huhn("Heike");
@@ -67,9 +77,13 @@ public class DreiChinesen {
 		 for (int i=0;i<3;i++) {
 			 bauer.rufeHuhn(huehner[i]);
 			 bauer.fuettern(huehner[i]);
+			 System.out.println(huehner[i].getHungring());
 		 }
 		 
+		 bauer.fuettern(h1);
+		 
 		 bauer.berechneAnzahlHungrigerHuehner();
+		 */
 	 }
 }
 

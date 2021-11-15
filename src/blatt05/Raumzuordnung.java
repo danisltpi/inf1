@@ -15,7 +15,9 @@ public class Raumzuordnung {
 	/** Konstruktor */
 	public Raumzuordnung(Raum raum, Person nutzer) {
 		// TODO: prüfen, dass jeweils nicht null
-		this.raum = raum; this.nutzer = nutzer;
+		if (raum != null && nutzer != null) {
+			this.raum = raum; this.nutzer = nutzer;
+		}
 	}
 	
 	// Konstruktor mit Zuordnungsgrund
