@@ -1,0 +1,7 @@
+6.4
+	1. 1-9
+	2. Leeres Feld
+	3. 1. Array aus Spielfeldern, 2. Array für Zeilen, 3. Array für Spalten
+	4. 2
+	5. Nein, da in der Methode eine "eigene" Variable genutzt wird und das originale Array Objekt nicht angefasst wird
+	6. Es werden durch Spielfelder (2d arrays) iteriert
