@@ -89,6 +89,7 @@ public class SudokuChecker{
 			this.spielFeld = testFeld;
 
 			// mein code
+			this.spielFeld[0][8] = 5;
 			this.print();
 			this.validiereSpielfeld();
 
@@ -135,14 +136,13 @@ public class SudokuChecker{
 	private boolean isZeileOk(int zeile, int wert) {
 		// TODO		
 		// zeile 0 = zeile 1 im sudoku
-		for (int[] z: this.testSpielFelder[zeile]) {			
-			for (int i = 0; i <ROW_SIZE; i++) {	
-				System.out.println(wert + ": " + z[i]);
-			}
+		for (int iSpalte = 0; iSpalte < ROW_SIZE; iSpalte++) {
+			if (wert == this.spielFeld[zeile][iSpalte]) {
+				return false;	
+			}	
 		}
 		return true;
 	}
-
 	
 	/**
 	 * Pruefen, ob ein gegebener Wert in einer Spalte erlaubt ist.
