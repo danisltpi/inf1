@@ -168,6 +168,19 @@ public class SudokuChecker{
 	 * @return true, falls Wert noch nicht vorhanden.
 	 */
 	private boolean isBlockOk(int zeile, int spalte, int wert) {
+		// herausfinden welcher 3 zeilenblock 
+		int zeilenBlockIndex = (zeile / 3) * 3;
+		int spaltenBlockIndex = (spalte / 3) * 3;
+		
+		for (int dreiMalZeile=0; dreiMalZeile<3; dreiMalZeile++) {
+			for (int dreiMalSpalte=0; dreiMalSpalte<3; dreiMalSpalte++) {
+				int iZeile = dreiMalZeile + zeilenBlockIndex;
+				int iSpalte = dreiMalSpalte + spaltenBlockIndex;
+				if (wert == this.spielFeld[iZeile][iSpalte]) {
+					return false;
+				}
+			}
+		}
 		return true;
 	}
 	
