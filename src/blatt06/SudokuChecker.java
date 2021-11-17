@@ -122,7 +122,7 @@ public class SudokuChecker{
 	 */
 	private boolean isValueOk(int wert) {
 
-		return (wert <= ROW_SIZE && wert > 0); // TODO
+		return (wert <= ROW_SIZE && wert > 0); 
 	}
 	
 	
@@ -172,10 +172,17 @@ public class SudokuChecker{
 		int zeilenBlockIndex = (zeile / 3) * 3;
 		int spaltenBlockIndex = (spalte / 3) * 3;
 		
-		for (int dreiMalZeile=0; dreiMalZeile<3; dreiMalZeile++) {
-			for (int dreiMalSpalte=0; dreiMalSpalte<3; dreiMalSpalte++) {
-				int iZeile = dreiMalZeile + zeilenBlockIndex;
-				int iSpalte = dreiMalSpalte + spaltenBlockIndex;
+//		for (int dreiMalZeile=0; dreiMalZeile<3; dreiMalZeile++) {
+//			for (int dreiMalSpalte=0; dreiMalSpalte<3; dreiMalSpalte++) {
+//				int iZeile = dreiMalZeile + zeilenBlockIndex;
+//				int iSpalte = dreiMalSpalte + spaltenBlockIndex;
+//				if (wert == this.spielFeld[iZeile][iSpalte]) {
+//					return false;
+//				}
+//			}
+//		}	
+		for (int iZeile=zeilenBlockIndex; iZeile < zeilenBlockIndex + 3; iZeile++) {	
+			for (int iSpalte=spaltenBlockIndex; iSpalte < spaltenBlockIndex + 3; iSpalte++) {
 				if (wert == this.spielFeld[iZeile][iSpalte]) {
 					return false;
 				}
