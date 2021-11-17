@@ -141,8 +141,7 @@ public class SudokuChecker{
 			}	
 		}
 		return true;
-	}
-	
+	}	
 	/**
 	 * Pruefen, ob ein gegebener Wert in einer Spalte erlaubt ist.
 	 * 
