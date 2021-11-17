@@ -27,8 +27,9 @@ public class TernarySalutation {
 	static String salutation(boolean onFirstNameBase, boolean signature, String given, String name, String signatureText)
 	{
 		String printedName = (onFirstNameBase) ? "Viele Grüße\n" + given : "Mit freundlichen Grüßen\n" + given + " " + name;	
-		
-		return (printedName + "\n");
+		String line = "_______________________";
+	
+		return (printedName + "\n" + line + "\n" + signatureText);
 	}
 	
 	public static void main(String[] args) {
