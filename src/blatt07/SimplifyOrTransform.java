@@ -64,7 +64,7 @@ public class SimplifyOrTransform {
 		System.out.println();
 		for(a = 3;a<100;a+=2)
 		{
-			for(b=2;b*b < a && a % b != 0;b+=1) {
+			for(b=2;b*b < a && a % b != 0;b++) {
 			}			
 			if(b * b > a) {
 				System.out.print(a + ", ");
