@@ -30,6 +30,22 @@ public class MethodenUebung {
 		return smallest;
 	}
 	
+	// aufgabe 8.4
+	enum KartenFarbe {
+		KARO, HERZ, PIK, KREUZ
+	}
+
+	static int farbenWert(KartenFarbe farbe) {	
+		int wert;
+		switch (farbe) {
+		case KARO: wert = 9; break; 
+		case HERZ: wert = 10; break; 
+		case PIK: wert = 11; break;
+		default: wert = 12; break;
+		}	
+		return wert;
+	}		
+
 	static public void main(String[] args) {
 		System.out.println(betrag(-1)); // expected 1
 
@@ -44,6 +60,9 @@ public class MethodenUebung {
 		Point p2 = new Point(3, 3);
 		System.out.println(getDistance(p1, p2));
 		
-		System.out.println(smallestOfThree(5, 4, 3));
+		System.out.println(smallestOfThree(5, 4, 3));		
+
+		// aufgabe 8.4
+		System.out.println(farbenWert(KartenFarbe.HERZ));	
 	}
 }
