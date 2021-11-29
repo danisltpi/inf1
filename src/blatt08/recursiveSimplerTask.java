@@ -30,6 +30,22 @@ public class recursiveSimplerTask {
 			prt2468(n);
 		}	
 	}
+
+	void xxx(long n) {
+		if(n > 0L) { // rekursionsbasis
+			System.out.println(n);
+			xxx(n-1); // rekursionsvorschrift
+		}
+		else {} 
+	}	                
+		
+	void iterativeXxx(long n) {
+		while (n > 0L) {
+			System.out.println(n);
+			n--;
+		}	
+	}
+
 	public static void main(String[] args) {
 		prt2468(100);
 		// prt1234(Long.parseLong(args[0]));
