@@ -48,6 +48,7 @@ public class BasisWandler {
 		}	
 		return s;
 	}
+
 	public static void main(String[] args) {
 		BasisWandler bwr = new BasisWandler();
 

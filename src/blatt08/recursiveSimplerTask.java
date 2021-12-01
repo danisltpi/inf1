@@ -11,12 +11,18 @@ public class recursiveSimplerTask {
 		}	
 	}
 	
+	public static void prt1234_2(long n) {
+		if (n > 0) {
+			prt1234_2(n-1);
+			System.out.print(n + ", ");
+		}
+	}
+	
 	public static long j = 1;
 	public static void prtSqr1234(long n) {
-		if (j <= n) {
-			System.out.print(j * j + ", ");
-			j++;
-			prtSqr1234(n);
+		if (n > 0) {
+			prtSqr1234(n - 1);
+			System.out.print(n * n + ", ");
 		}
 	}
 
@@ -31,7 +37,7 @@ public class recursiveSimplerTask {
 		}	
 	}
 
-	void xxx(long n) {
+	static void xxx(long n) {
 		if(n > 0L) { // rekursionsbasis
 			System.out.println(n);
 			xxx(n-1); // rekursionsvorschrift
@@ -39,7 +45,7 @@ public class recursiveSimplerTask {
 		else {} 
 	}	                
 		
-	void iterativeXxx(long n) {
+	static void iterativeXxx(long n) {
 		while (n > 0L) {
 			System.out.println(n);
 			n--;
@@ -49,5 +55,7 @@ public class recursiveSimplerTask {
 	public static void main(String[] args) {
 		prt2468(100);
 		// prt1234(Long.parseLong(args[0]));
+		xxx(100);
+
 		}	
 }

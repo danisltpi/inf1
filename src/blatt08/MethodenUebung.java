@@ -21,10 +21,10 @@ public class MethodenUebung {
 	}
 	public static double smallestOfThree(double x, double y, double z) {
 		double smallest = x;
-		if  (y > smallest) {
+		if  (y < smallest) {
 			smallest = y;
 		}
-		if (z > smallest) {
+		if (z < smallest) {
 			smallest = z;
 		}	
 		return smallest;
