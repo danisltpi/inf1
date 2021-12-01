@@ -37,10 +37,17 @@ public class BasisWandler {
 	 * @param k: Basis, in die gewandelt werden soll
 	 * @return Zeichenkette mit einzelnen Ziffern 0 ... 9, A, ..., Z
 	 */
-	String inBasisKwandeln(long n, int k)  {
-		return "AFFE"; // TODO Rekursive Lösung für Basiswandel
+	String s = "";
+	String inBasisKwandeln(long n, int k)  {;
+		if (n <= 0L) {	
+			return s;
+		}
+		else {
+			inBasisKwandeln(n / k, k);
+			s += this.intNachZiffer((int) n % k);
+		}	
+		return s;
 	}
-
 	public static void main(String[] args) {
 		BasisWandler bwr = new BasisWandler();
 
@@ -61,9 +68,10 @@ public class BasisWandler {
 			int basis = (int)test[1];
 			long dezimalZahl = Long.valueOf(test[2].toString());
 			String resultat = bwr.inBasisKwandeln(dezimalZahl, basis);
+			bwr.s = ""; // mein ding um rekursion zu benutzen
 			System.out.printf("%6d zur Basis %2d ist %8s (%s)\n", 
 					dezimalZahl, basis, resultat, 
 					(resultat.equals(wunschErgebnis) ? "OK" : "falsch") );
-		}
+		}	
 	}
 }
