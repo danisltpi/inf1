@@ -50,11 +50,20 @@
 		 *            Rekursionstiefe.
 		 */
 		static void printInXml(Object[] objs, String indent) {
-			// TODO
+			for (Object obj: objs) {
+				if (obj.getClass().isArray()) {
+					System.out.println(indent + "<container>");
+					printInXml((Object[]) obj, "  ");
+					System.out.println(indent + "</container>");
+				} else {					
+					System.out.printf(indent + "  " + "<string>%s</string>\n", obj);
+				}
+			}
 		}
 
 	public static void main(String[] args) {
-		printRecursively(eBau); // Gegebene Variante
+		//printRecursively(eBau); // Gegebene Variante
+		// printInXml(simple, "");
 		printInXml(eBau, "");   // Zu programmierende Variante
 		/* Erwartete Ausgabe:
 		<container>
