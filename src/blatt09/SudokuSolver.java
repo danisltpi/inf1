@@ -82,6 +82,19 @@ public class SudokuSolver {
 			 						 {8, 9, 1,  0, 0, 0,  0, 0, 0},
 			 						 {0, 0, 0,  0, 0, 0,  5, 4, 7},
 			 						 {0, 0, 0,  3, 2, 6,  0, 0, 0}},
+									// mein test
+								 /* |---------|---------|---------| */
+									{{1, 3, 6,  5, 4, 2,  7, 8, 9},
+			 						 {9, 6, 7,  0, 0, 0,  0, 0, 0},
+			 						 {0, 0, 0,  0, 0, 0,  3, 1, 8},
+			 					 /* |---------|---------|---------| */
+			 						 {0, 0, 0,  0, 7, 0,  8, 6, 4},
+			 						 {0, 2, 0,  6, 0, 4,  0, 9, 0},
+			 						 {6, 4, 5,  0, 1, 0,  0, 0, 0},
+			 					 /* |---------|---------|---------| */
+			 						 {8, 9, 1,  0, 0, 0,  0, 0, 0},
+			 						 {0, 0, 0,  0, 0, 0,  5, 4, 7},
+			 						 {0, 0, 0,  3, 2, 6,  0, 0, 0}},
 		 						 /* |---------|---------|---------| */	
 	
 	};
@@ -92,6 +105,8 @@ public class SudokuSolver {
 			
 			nrOfSolutions = 0; nrOfTests = 0;
 			this.loesen(0, 0);
+			
+			// meine methoden
 		}
 	}
 	
@@ -186,6 +201,7 @@ public class SudokuSolver {
 	}
 	
 	
+	
 	/**
 	 * Suche Loesungen des Sudokus.
 	 * 
@@ -200,10 +216,52 @@ public class SudokuSolver {
 	 * @param spalte Startspalte der Suche
 	 */
 	public void loesen(int zeile, int spalte) {
-		// TODO: Sudoku mit Backtracking lösen
+		// TODO: Sudoku mit Backtracking lösen	
+		int wert = spielFeld[zeile][spalte];	
+		if (wert == 0) {
+			for (int i = 1; i <= 9; i++) {	
+				if (isCellOk(zeile, spalte, i)) {
+					spielFeld[zeile][spalte] = i;
+					if (spalte < 8) {
+						loesen(zeile, spalte + 1);
+					} else if (zeile < 8) {
+						loesen(zeile + 1, 0);
+					} 
+					// either no solution or finished
+					if (isSolved()) {
+						nrOfSolutions++;
+						System.out.println("Number of tests: " + nrOfTests + ", number of Solutions: " + nrOfSolutions + ", Solution: ");
+						print();
+					} 
+				}	
+			}
+			spielFeld[zeile][spalte] = 0;
+
+		} else {
+			if (spalte < 8) {
+				loesen(zeile, spalte + 1);
+			} else if (zeile < 8) {
+				loesen(zeile + 1, 0);
+			}
+		}
+	}
+		
+	public boolean isCellOk(int zeile, int spalte, int wert) {
+		nrOfTests++;
+		return isZeileOk(zeile, wert) && isSpalteOk(spalte, wert) && isBlockOk(zeile, spalte, wert);
 	}
 	
-	
+	public boolean isSolved() {
+		for (int zeile = 0; zeile < 9; zeile++) {
+			for (int spalte = 0; spalte < 9; spalte++) {
+				if (spielFeld[spalte][zeile] == 0) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+			
 	public static void main(String[] args) {
 		new SudokuSolver().testSudokuSolver();
 	}
