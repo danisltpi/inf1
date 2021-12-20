@@ -1,0 +1,8 @@
+10.2
+1. Da dies Instanzvariablen sind.
+2. Da diese mit "final" als Konstanten deklariert wurden.
+3. Punkt wird verschoben
+4. Linie wird um 90 Grad um ihr Mittelpunkt rotiert
+5. Von der Instanz "this"
+6. a) Im Stack
+   b) Der Parameter ist eine kopierte Referenz, die dasselbe Objekt referenzieren
