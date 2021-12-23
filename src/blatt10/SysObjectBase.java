@@ -1,5 +1,10 @@
 package blatt10;
 
+/** Basisklasse für Systemobjekte
+ * 
+ * @author thien
+ *
+ */
 abstract public class SysObjectBase {
 	String name;
 	String owner;
@@ -24,6 +29,11 @@ abstract public class SysObjectBase {
 	}
 }
 
+/** Klasse für Textdateien
+ * 
+ * @author thien
+ *
+ */
 class SysTextFile extends SysObjectBase {
 	String type;
 	String text = "";
@@ -44,6 +54,11 @@ class SysTextFile extends SysObjectBase {
 	}
 }
 
+/** Klasse für Verzeichnisse
+ * 
+ * @author thien
+ *
+ */
 class SysDirectory extends SysObjectBase {
 	SysObjectBase[] sysObjects;
 	
