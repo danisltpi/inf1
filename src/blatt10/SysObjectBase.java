@@ -79,12 +79,12 @@ class SysDirectory extends SysObjectBase {
 	 * @return Struktur des Verzeichnisses als String
 	 */
 	public String dirStructure(String indent) {
-		String ret = indent + this.toString();
+		String ret = indent + this.toString() + "\n";
 		for (SysObjectBase obj: sysObjects) {
 			if (obj.getClass().getName() == "blatt10.SysDirectory") {
-				ret += ((SysDirectory) obj).dirStructure("\n| - ");
+				ret += ((SysDirectory) obj).dirStructure(indent + "| - ");
 			} else {
-				ret += indent + "| - " + obj;	
+				ret += indent + "| - " + obj + "\n";	
 			}
 		}
 		return ret;

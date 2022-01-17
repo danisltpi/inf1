@@ -14,8 +14,6 @@ public class DivTryCatch {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println(div(100, 0));
 	}
-
 }

@@ -46,11 +46,12 @@ public class IntegerValueObject {
 		hello.setText("public class HelloWorld{/*...*/}");
 		SysTextFile test = new SysTextFile("Test", "java");
 		SysTextFile prt = new SysTextFile("PrintClass", "java");
-		SysDirectory srcDir = new SysDirectory("SRC", hello, test, prt);
+		
+		SysDirectory testDir = new SysDirectory("TEST", stf);
+		SysDirectory srcDir = new SysDirectory("SRC", hello, test, prt, testDir);
 		SysTextFile todo = new SysTextFile("Todos", "txt");
 		SysTextFile toget = new SysTextFile("Eggs", "rtm");
 		SysDirectory txtDir = new SysDirectory("txt", todo, toget);
-		
 		SysDirectory home = new SysDirectory("home", srcDir, txtDir);
 		srcDir.setName("SRC");
 		toget.setName("Einkaufsliste");
